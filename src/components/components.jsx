@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Col, List, Row } from "antd";
-import { PlusOutlined } from "@ant-design/icons";
+// import { PlusOutlined } from "@ant-design/icons";
 import "./components.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,6 +8,7 @@ import {
   faServer,
   faTemperatureQuarter,
 } from "@fortawesome/free-solid-svg-icons";
+import CardComp from "./Card/card";
 
 export default function Components() {
   const data = [
@@ -103,25 +104,34 @@ export default function Components() {
                 className="d-flex justify-content-center"
               >
                 <Col span={8}>
-                  <Card title={item.title1} bordered={true}>
-                    {item.contentSr.content1}
-                    {item.contentSr.content2}
-                    {item.contentSr.content3}
-                  </Card>
+                  <CardComp
+                    title={item.title1}
+                    content={[
+                      item.contentSr.content1,
+                      item.contentSr.content2,
+                      item.contentSr.content3,
+                    ]}
+                  />
                 </Col>
                 <Col span={8}>
-                  <Card title={item.title2} bordered={true}>
-                    {item.contentMr.content1}
-                    {item.contentMr.content2}
-                    {item.contentMr.content3}
-                  </Card>
+                  <CardComp
+                    title={item.title2}
+                    content={[
+                      item.contentMr.content1,
+                      item.contentMr.content2,
+                      item.contentMr.content3,
+                    ]}
+                  />
                 </Col>
                 <Col span={8}>
-                  <Card title={item.title3} bordered={true}>
-                    {item.contentStats.content1}
-                    {item.contentStats.content2}
-                    {item.contentStats.content3}
-                  </Card>
+                  <CardComp
+                    title={item.title3}
+                    content={[
+                      item.contentStats.content1,
+                      item.contentStats.content2,
+                      item.contentStats.content3,
+                    ]}
+                  />
                 </Col>
               </Row>
             </List.Item>
